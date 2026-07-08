@@ -1,110 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Трудозатраты</title>
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Трудозатраты" />
-<meta name="theme-color" content="#12151C" />
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAI4ElEQVR4nO3dMU7eShhAUXjKCpDoaOgQy8tCsjxEl62kSJTkPeUF//ZY9vieU9seN8w1I8R3//D4dAdAzz9HvwAAxxAAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCI+nT0CwD88vLyuuSy9/e3vd+k4P7h8enodwBYuvX/TgY2cgQEHG/F7r/6Ln4SAOBgW/ZxDdhCAIAjbd/BNWA1AQAOM2rv1oB1BAAgSgCAY4z9bPdLwAoCABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRn45+AeCMFv53ZWPZpyYAwL/c9I/1v18sA5NyBAT8sm6simEskxIA4Ict+7gGzEgAgLu7ETu4BkxHAIBhe7cGzEUAAKIEAOrGfrb7JWAiAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQZSYwnNrbl+cll71+/rr3m3A9AgAntXDr//1iGeAmjoDgjG7a/TfeRZYAwOls2cc1gOUEAM5l+w6uASwkAHAio/ZuDWAJAQCIEgA4i7Gf7X4J4EMCABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABBlJjAsYjg71yMA8AHD2bkqR0DwN4azc2ECAP/LcHauTQDgzwxn5/IEAP7AcHYKBAAgSgDgvwxnJ0IAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAg6hspCkbO3x3sCQAAAABJRU5ErkJggg==" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Трудозатраты">
+<meta name="theme-color" content="#12151C">
 <style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  * { box-sizing: border-box; }
   html, body {
-    margin: 0; padding: 0;
-    background: #12151C;
-    color: #F1EDE3;
-    font-family: 'Manrope', -apple-system, sans-serif;
-    overscroll-behavior: none;
-    height: 100%;
+    margin: 0; padding: 0; height: 100%;
+    background: #12151C; color: #F1EDE3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
   }
-
-  .page {
-    min-height: 100vh;
-    max-width: 480px;
-    margin: 0 auto;
-    padding: calc(20px + env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom));
-  }
-  .eyebrow {
-    display: flex; align-items: center; gap: 6px;
-    color: #E8A33D; font-family: 'Unbounded', sans-serif;
-    font-size: 11px; letter-spacing: 0.12em; font-weight: 500; margin-bottom: 10px;
-  }
-  .weekNav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
-  .weekLabel { font-family: 'Unbounded', sans-serif; font-size: 16px; font-weight: 500; }
-  .navBtn {
-    background: #1B2029; border: 1px solid #2A3140; border-radius: 10px;
-    color: #F1EDE3; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
-    cursor: pointer;
-  }
-  .dayStrip { display: flex; gap: 6px; margin-bottom: 14px; }
-  .dayPill {
-    flex: 1; background: #1B2029; border: 1px solid #2A3140; border-radius: 12px;
-    padding: 8px 4px 10px; display: flex; flex-direction: column; align-items: center; gap: 4px;
-    cursor: pointer;
-  }
+  .page { max-width: 480px; margin: 0 auto; padding: 20px 16px 60px; padding-top: calc(20px + env(safe-area-inset-top)); }
+  .eyebrow { color: #E8A33D; font-size: 12px; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 14px; }
+  .weekNav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .weekLabel { font-size: 17px; font-weight: 700; }
+  .navBtn { background: #1B2029; border: 1px solid #2A3140; border-radius: 10px; color: #F1EDE3; width: 38px; height: 38px; font-size: 20px; line-height: 1; cursor: pointer; }
+  .dayStrip { display: flex; gap: 6px; margin-bottom: 16px; }
+  .dayPill { flex: 1; background: #1B2029; border: 1px solid #2A3140; border-radius: 12px; padding: 10px 2px; text-align: center; cursor: pointer; }
   .dayPill.active { background: #E8A33D; border-color: #E8A33D; }
-  .dayPillLabel { font-family: 'Unbounded', sans-serif; font-size: 11px; font-weight: 500; }
-  .dayPill.active .dayPillLabel, .dayPill.active .dayPillDate { color: #12151C; }
-  .dayPillDate { font-size: 11px; color: #8A93A6; }
-  .gauge { display: flex; gap: 2px; margin-top: 4px; }
-  .tick { width: 2.5px; height: 12px; border-radius: 1px; background: rgba(241,237,227,0.12); }
-  .card {
-    background: #1B2029; border: 1px solid #2A3140; border-radius: 16px; padding: 16px; margin-bottom: 14px;
-  }
-  .cardHeader { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-  .cardTitle { font-family: 'Unbounded', sans-serif; font-size: 15px; font-weight: 500; }
+  .dayPillLabel { font-size: 12px; font-weight: 700; }
+  .dayPill.active .dayPillLabel, .dayPill.active .dayPillDate, .dayPill.active .dayPillTot { color: #12151C; }
+  .dayPillDate { font-size: 12px; color: #8A93A6; margin-top: 2px; }
+  .dayPillTot { font-size: 11px; color: #E8A33D; margin-top: 4px; font-weight: 700; }
+  .dayPill.over .dayPillTot { color: #E8604C; }
+  .card { background: #1B2029; border: 1px solid #2A3140; border-radius: 16px; padding: 16px; margin-bottom: 14px; }
+  .cardHead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .cardTitle { font-size: 17px; font-weight: 700; }
   .cardSub { font-size: 12px; color: #8A93A6; margin-top: 2px; }
-  .totalBadge {
-    font-family: 'Unbounded', sans-serif; font-size: 12px; font-weight: 500; color: #E8A33D;
-    background: rgba(232,163,61,0.12); border: 1px solid rgba(232,163,61,0.35); border-radius: 20px;
-    padding: 5px 10px; white-space: nowrap;
-  }
-  .totalBadge.done { color: #7FA68C; background: rgba(127,166,140,0.12); border-color: rgba(127,166,140,0.35); }
-  .totalBadge.over { color: #E8604C; background: rgba(232,96,76,0.12); border-color: rgba(232,96,76,0.35); }
-  .emptyState { color: #6B7488; font-size: 13px; padding: 14px 2px; }
-  .taskList { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
-  .taskRow {
-    display: flex; align-items: center; gap: 8px; background: #12151C; border: 1px solid #232938;
-    border-radius: 10px; padding: 9px 10px;
-  }
-  .taskText { flex: 1; font-size: 13.5px; line-height: 1.3; }
-  .taskHours { font-size: 12.5px; color: #E8A33D; font-weight: 600; white-space: nowrap; }
-  .deleteBtn { background: none; border: none; color: #6B7488; cursor: pointer; padding: 2px; display: flex; font-size: 14px; }
-  .addRow { display: flex; gap: 6px; }
-  .inputText, .inputHours {
-    background: #12151C; border: 1px solid #2A3140; border-radius: 10px; color: #F1EDE3;
-    font-size: 16px; font-family: 'Manrope', sans-serif; padding: 10px 12px;
-  }
-  .inputText { flex: 1; }
-  .inputHours { width: 56px; text-align: center; padding: 10px 8px; }
-  input:focus { outline: none; border-color: #E8A33D; }
-  .addBtn {
-    background: #E8A33D; border: none; border-radius: 10px; width: 40px; color: #12151C;
-    display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px; font-weight: 700;
-  }
-  .summaryCard { background: #1B2029; border: 1px solid #E8A33D; border-radius: 16px; padding: 16px; }
-  .summaryHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-  .copyBtn {
-    display: flex; align-items: center; gap: 6px; background: rgba(232,163,61,0.14);
-    border: 1px solid rgba(232,163,61,0.4); border-radius: 20px; padding: 6px 12px;
-    color: #E8A33D; font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'Manrope', sans-serif;
-  }
-  .summaryPre {
-    white-space: pre-wrap; font-family: 'Manrope', sans-serif; font-size: 12.5px; line-height: 1.6;
-    color: #C9CDD8; margin: 0;
-  }
-  .errorBanner {
-    margin-top: 12px; background: rgba(232,96,76,0.12); border: 1px solid rgba(232,96,76,0.35);
-    color: #E8604C; border-radius: 10px; padding: 10px 12px; font-size: 12.5px;
-  }
+  .badge { font-size: 13px; font-weight: 700; color: #E8A33D; background: rgba(232,163,61,0.12); border: 1px solid rgba(232,163,61,0.35); border-radius: 20px; padding: 6px 12px; white-space: nowrap; }
+  .badge.done { color: #7FA68C; background: rgba(127,166,140,0.12); border-color: rgba(127,166,140,0.35); }
+  .badge.over { color: #E8604C; background: rgba(232,96,76,0.12); border-color: rgba(232,96,76,0.35); }
+  .empty { color: #6B7488; font-size: 14px; padding: 12px 0; }
+  .task { display: flex; align-items: center; gap: 10px; background: #12151C; border: 1px solid #232938; border-radius: 10px; padding: 11px 12px; margin-bottom: 8px; }
+  .taskText { flex: 1; font-size: 14px; }
+  .taskHrs { font-size: 13px; color: #E8A33D; font-weight: 700; }
+  .del { background: none; border: none; color: #6B7488; font-size: 18px; cursor: pointer; padding: 0 2px; }
+  .addRow { display: flex; gap: 6px; margin-top: 12px; }
+  .inText, .inHrs { font-size: 16px; padding: 12px; border-radius: 10px; border: 1px solid #2A3140; background: #12151C; color: #F1EDE3; }
+  .inText { flex: 1; min-width: 0; }
+  .inHrs { width: 60px; text-align: center; }
+  .inText:focus, .inHrs:focus { outline: none; border-color: #E8A33D; }
+  .addBtn { width: 46px; font-size: 24px; font-weight: 700; border: none; border-radius: 10px; background: #E8A33D; color: #12151C; cursor: pointer; }
+  .sumCard { background: #1B2029; border: 1px solid #E8A33D; border-radius: 16px; padding: 16px; }
+  .sumHead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .copyBtn { font-size: 13px; font-weight: 700; color: #E8A33D; background: rgba(232,163,61,0.14); border: 1px solid rgba(232,163,61,0.4); border-radius: 20px; padding: 8px 14px; cursor: pointer; }
+  .sumPre { white-space: pre-wrap; font-size: 13px; line-height: 1.6; color: #C9CDD8; margin: 0; font-family: inherit; }
+  .warn { margin-top: 12px; background: rgba(232,96,76,0.12); border: 1px solid rgba(232,96,76,0.35); color: #E8604C; border-radius: 10px; padding: 10px 12px; font-size: 13px; }
+  .hidden { display: none; }
 </style>
 </head>
 <body>
@@ -112,246 +60,200 @@
   <div class="eyebrow">⏱ ТРУДОЗАТРАТЫ</div>
 
   <div class="weekNav">
-    <button class="navBtn" id="prevWeek" aria-label="Предыдущая неделя">‹</button>
+    <button class="navBtn" id="prev">‹</button>
     <div class="weekLabel" id="weekLabel"></div>
-    <button class="navBtn" id="nextWeek" aria-label="Следующая неделя">›</button>
+    <button class="navBtn" id="next">›</button>
   </div>
 
   <div class="dayStrip" id="dayStrip"></div>
 
   <div class="card">
-    <div class="cardHeader">
+    <div class="cardHead">
       <div>
         <div class="cardTitle" id="cardTitle"></div>
         <div class="cardSub" id="cardSub"></div>
       </div>
-      <div class="totalBadge" id="totalBadge"></div>
+      <div class="badge" id="badge"></div>
     </div>
-    <div id="cardBody"></div>
+    <div id="taskList"></div>
+    <div class="addRow">
+      <input class="inText" id="inText" placeholder="Чем занимался?" autocomplete="off" autocorrect="off">
+      <input class="inHrs" id="inHrs" placeholder="ч" inputmode="decimal" autocomplete="off">
+      <button class="addBtn" id="addBtn">+</button>
+    </div>
   </div>
 
-  <div id="summaryCard"></div>
-  <div id="errorBanner"></div>
+  <div id="sumWrap"></div>
+  <div id="warn"></div>
 </div>
 
 <script>
-const DAY_OFFSETS = [
-  { offset: 0, label: "Пт", full: "Пятница" },
-  { offset: 3, label: "Пн", full: "Понедельник" },
-  { offset: 4, label: "Вт", full: "Вторник" },
-  { offset: 5, label: "Ср", full: "Среда" },
-  { offset: 6, label: "Чт", full: "Четверг" },
+"use strict";
+
+var DAYS = [
+  { off: 0, lbl: "Пт", full: "Пятница" },
+  { off: 3, lbl: "Пн", full: "Понедельник" },
+  { off: 4, lbl: "Вт", full: "Вторник" },
+  { off: 5, lbl: "Ср", full: "Среда" },
+  { off: 6, lbl: "Чт", full: "Четверг" }
 ];
-const MONTHS = ["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"];
-const STORAGE_PREFIX = "worklog:entries:";
+var MONTHS = ["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"];
+var PREFIX = "worklog:";
 
-function toISO(d) {
-  const y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,"0"), day = String(d.getDate()).padStart(2,"0");
-  return `${y}-${m}-${day}`;
-}
-function addDays(d, n) { const nd = new Date(d); nd.setDate(nd.getDate()+n); return nd; }
-function currentPeriodStart() {
-  const now = new Date();
-  const offset = (now.getDay()+2) % 7;
-  return addDays(now, -offset);
-}
-function fmtShort(d) { return `${d.getDate()} ${MONTHS[d.getMonth()]}`; }
-function uid() { return Math.random().toString(36).slice(2,9); }
+function iso(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function addDays(d,n){ var x=new Date(d); x.setDate(x.getDate()+n); return x; }
+function periodStart(){ var now=new Date(); return addDays(now, -(((now.getDay()+2)%7))); }
+function fmt(d){ return d.getDate()+" "+MONTHS[d.getMonth()]; }
+function uid(){ return Math.random().toString(36).slice(2,9); }
 
-function storageAvailable() {
-  try {
-    const k = "__test__";
-    localStorage.setItem(k, "1");
-    localStorage.removeItem(k);
-    return true;
-  } catch { return false; }
-}
-const STORAGE_OK = storageAvailable();
+var storageOk = (function(){ try { localStorage.setItem("__t","1"); localStorage.removeItem("__t"); return true; } catch(e){ return false; } })();
 
-function loadDay(iso) {
-  if (!STORAGE_OK) return [];
-  try {
-    const raw = localStorage.getItem(STORAGE_PREFIX + iso);
-    return raw ? JSON.parse(raw) : [];
-  } catch { return []; }
+function loadDay(k){ if(!storageOk) return (mem[k]||[]); try { var r=localStorage.getItem(PREFIX+k); return r?JSON.parse(r):[]; } catch(e){ return []; } }
+function saveDayStore(k,list){ if(!storageOk){ mem[k]=list; warn("Хранилище недоступно (приватный режим?). Данные сохранятся только до закрытия вкладки."); return; } try { localStorage.setItem(PREFIX+k, JSON.stringify(list)); } catch(e){ warn("Не удалось сохранить: "+e.message); } }
+var mem = {};
+
+var start = periodStart();
+var active = (function(){ var o=(new Date().getDay()+2)%7; for(var i=0;i<DAYS.length;i++){ if(DAYS[i].off===o) return o; } return 0; })();
+
+function total(k){ var l=loadDay(k), s=0; for(var i=0;i<l.length;i++) s+=l[i].hours; return s; }
+
+function warn(msg){
+  var w=document.getElementById("warn");
+  w.innerHTML='<div class="warn"></div>';
+  w.firstChild.textContent=msg;
+  setTimeout(function(){ w.innerHTML=""; }, 5000);
 }
-function persistDay(iso, list) {
-  if (!STORAGE_OK) {
-    showError("Хранилище браузера недоступно (возможно, включён приватный режим). Записи сохранятся только до закрытия вкладки.");
+
+function esc(s){ var d=document.createElement("div"); d.textContent=s; return d.innerHTML; }
+
+// --- rendering split so the input row is NEVER rebuilt while typing ---
+
+function renderDays(){
+  var strip=document.getElementById("dayStrip");
+  strip.innerHTML="";
+  for(var i=0;i<DAYS.length;i++){
+    (function(d){
+      var k=iso(addDays(start,d.off));
+      var t=total(k);
+      var el=document.createElement("button");
+      el.className="dayPill"+(d.off===active?" active":"")+(t>8?" over":"");
+      el.innerHTML='<div class="dayPillLabel">'+d.lbl+'</div><div class="dayPillDate">'+addDays(start,d.off).getDate()+'</div><div class="dayPillTot">'+t+' ч</div>';
+      el.onclick=function(){ active=d.off; renderAll(); };
+      strip.appendChild(el);
+    })(DAYS[i]);
+  }
+}
+
+function activeDate(){ for(var i=0;i<DAYS.length;i++){ if(DAYS[i].off===active) return { d: DAYS[i], date: addDays(start,DAYS[i].off) }; } }
+
+function renderHeader(){
+  var d0=addDays(start,0), d4=addDays(start,6);
+  document.getElementById("weekLabel").textContent=fmt(d0)+" — "+fmt(d4);
+  var a=activeDate();
+  document.getElementById("cardTitle").textContent=a.d.full;
+  document.getElementById("cardSub").textContent=fmt(a.date);
+  var t=total(iso(a.date));
+  var b=document.getElementById("badge");
+  b.textContent=t+" / 8 ч";
+  b.className="badge"+(t>8?" over":(t===8?" done":""));
+}
+
+function renderTasks(){
+  var a=activeDate();
+  var k=iso(a.date);
+  var list=loadDay(k);
+  var box=document.getElementById("taskList");
+  box.innerHTML="";
+  if(list.length===0){
+    var future = a.date > new Date(new Date().setHours(23,59,59,999));
+    var e=document.createElement("div");
+    e.className="empty";
+    e.textContent = future ? "Этот день ещё впереди." : "Пока ничего не записано. Добавь, чем занимался.";
+    box.appendChild(e);
     return;
   }
-  try {
-    localStorage.setItem(STORAGE_PREFIX + iso, JSON.stringify(list));
-  } catch (e) {
-    showError("Не удалось сохранить: " + (e && e.message ? e.message : e));
+  for(var i=0;i<list.length;i++){
+    (function(item){
+      var row=document.createElement("div");
+      row.className="task";
+      var tx=document.createElement("span"); tx.className="taskText"; tx.textContent=item.text;
+      var hr=document.createElement("span"); hr.className="taskHrs"; hr.textContent=item.hours+" ч";
+      var del=document.createElement("button"); del.className="del"; del.textContent="✕";
+      del.onclick=function(){
+        var cur=loadDay(k).filter(function(x){ return x.id!==item.id; });
+        saveDayStore(k,cur);
+        renderDays(); renderHeader(); renderTasks(); renderSummary();
+      };
+      row.appendChild(tx); row.appendChild(hr); row.appendChild(del);
+      box.appendChild(row);
+    })(list[i]);
   }
 }
 
-let periodStart = currentPeriodStart();
-let activeOffset = (() => {
-  const off = (new Date().getDay()+2) % 7;
-  return DAY_OFFSETS.find(d => d.offset === off) ? off : 0;
-})();
-let entriesByDate = {};
-
-function loadPeriod(start) {
-  const results = {};
-  for (const d of DAY_OFFSETS) {
-    const iso = toISO(addDays(start, d.offset));
-    results[iso] = loadDay(iso);
+function buildSummary(){
+  var out=[];
+  for(var i=0;i<DAYS.length;i++){
+    var d=DAYS[i];
+    var date=addDays(start,d.off);
+    var k=iso(date);
+    var list=loadDay(k);
+    out.push(d.full+", "+fmt(date)+" — "+total(k)+" ч.");
+    if(list.length===0) out.push("  (пусто)");
+    else for(var j=0;j<list.length;j++) out.push("  – "+list[j].text+" ("+list[j].hours+" ч.)");
   }
-  entriesByDate = results;
-  render();
+  return out.join("\n");
 }
 
-function saveDay(iso, list) {
-  entriesByDate[iso] = list;
-  persistDay(iso, list);
-  render();
-}
-
-function showError(msg) {
-  document.getElementById('errorBanner').innerHTML = `<div class="errorBanner">${escapeHtml(msg)}</div>`;
-  setTimeout(() => { document.getElementById('errorBanner').innerHTML = ""; }, 5000);
-}
-
-function dayTotal(iso) {
-  return (entriesByDate[iso] || []).reduce((s,t) => s + t.hours, 0);
-}
-
-function buildSummary(dates) {
-  const lines = [];
-  for (const d of dates) {
-    const iso = toISO(d.date);
-    const list = entriesByDate[iso] || [];
-    lines.push(`${d.full}, ${fmtShort(d.date)} — ${dayTotal(iso)} ч.`);
-    if (list.length === 0) lines.push("  (пусто)");
-    else list.forEach(t => lines.push(`  – ${t.text} (${t.hours} ч.)`));
-  }
-  return lines.join("\n");
-}
-
-function escapeHtml(s) {
-  const div = document.createElement('div');
-  div.textContent = s;
-  return div.innerHTML;
-}
-
-function render() {
-  const dates = DAY_OFFSETS.map(d => ({...d, date: addDays(periodStart, d.offset)}));
-  const active = dates.find(d => d.offset === activeOffset);
-  const activeISO = toISO(active.date);
-  const isThursday = activeOffset === 6;
-
-  document.getElementById('weekLabel').textContent = `${fmtShort(dates[0].date)} — ${fmtShort(dates[4].date)}`;
-
-  const strip = document.getElementById('dayStrip');
-  strip.innerHTML = "";
-  dates.forEach(d => {
-    const iso = toISO(d.date);
-    const total = dayTotal(iso);
-    const isActive = d.offset === activeOffset;
-    const pill = document.createElement('button');
-    pill.className = 'dayPill' + (isActive ? ' active' : '');
-    let ticksHtml = "";
-    for (let i = 0; i < 8; i++) {
-      const filled = i < Math.floor(total) || (i < total && total % 1 !== 0);
-      let bg = 'rgba(241,237,227,0.12)';
-      if (isActive) bg = filled ? '#12151C' : 'rgba(18,21,28,0.18)';
-      else if (filled) bg = total > 8 ? '#E8604C' : '#E8A33D';
-      ticksHtml += `<div class="tick" style="background:${bg}"></div>`;
-    }
-    pill.innerHTML = `
-      <span class="dayPillLabel">${d.label}</span>
-      <span class="dayPillDate">${d.date.getDate()}</span>
-      <div class="gauge">${ticksHtml}</div>
-    `;
-    pill.onclick = () => { activeOffset = d.offset; render(); };
-    strip.appendChild(pill);
-  });
-
-  document.getElementById('cardTitle').textContent = active.full;
-  document.getElementById('cardSub').textContent = fmtShort(active.date);
-
-  const activeTotal = dayTotal(activeISO);
-  const badge = document.getElementById('totalBadge');
-  badge.textContent = `${activeTotal} / 8 ч`;
-  badge.className = 'totalBadge' + (activeTotal > 8 ? ' over' : activeTotal === 8 ? ' done' : '');
-
-  const body = document.getElementById('cardBody');
-  const list = entriesByDate[activeISO] || [];
-  const isFuture = active.date > new Date(new Date().setHours(23,59,59,999));
-  let html = `<div class="taskList">`;
-  if (list.length === 0) {
-    html += `<div class="emptyState">Пока ничего не записано.${isFuture ? " Этот день ещё впереди." : " Добавь, чем занимался."}</div>`;
-  } else {
-    list.forEach(t => {
-      html += `
-        <div class="taskRow">
-          <span class="taskText">${escapeHtml(t.text)}</span>
-          <span class="taskHours">${t.hours} ч</span>
-          <button class="deleteBtn" data-id="${t.id}" aria-label="Удалить">✕</button>
-        </div>`;
-    });
-  }
-  html += `</div>
-    <div class="addRow">
-      <input class="inputText" id="taskText" placeholder="Чем занимался?" autocomplete="off" />
-      <input class="inputHours" id="taskHours" placeholder="ч" inputmode="decimal" autocomplete="off" />
-      <button class="addBtn" id="addBtn" aria-label="Добавить">+</button>
-    </div>`;
-  body.innerHTML = html;
-
-  body.querySelectorAll('.deleteBtn').forEach(btn => {
-    btn.onclick = () => {
-      const list = entriesByDate[activeISO] || [];
-      saveDay(activeISO, list.filter(t => t.id !== btn.dataset.id));
-    };
-  });
-  const addBtn = document.getElementById('addBtn');
-  const doAdd = () => {
-    const textEl = document.getElementById('taskText');
-    const hoursEl = document.getElementById('taskHours');
-    const text = textEl.value.trim();
-    const hours = parseFloat(hoursEl.value.replace(",", "."));
-    if (!text || !hours || hours <= 0) return;
-    const list = entriesByDate[activeISO] || [];
-    saveDay(activeISO, [...list, {id: uid(), text, hours}]);
+function renderSummary(){
+  var wrap=document.getElementById("sumWrap");
+  if(active!==6){ wrap.innerHTML=""; return; }
+  wrap.innerHTML='<div class="sumCard"><div class="sumHead"><div class="cardTitle">Итог за неделю</div><button class="copyBtn" id="copyBtn">Копировать</button></div><pre class="sumPre" id="sumPre"></pre></div>';
+  document.getElementById("sumPre").textContent=buildSummary();
+  document.getElementById("copyBtn").onclick=function(){
+    var text=buildSummary();
+    var self=this;
+    function done(){ self.textContent="Скопировано"; setTimeout(function(){ self.textContent="Копировать"; },1800); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text); done(); });
+    } else { fallbackCopy(text); done(); }
   };
-  addBtn.onclick = doAdd;
-  document.getElementById('taskText').onkeydown = e => e.key === 'Enter' && doAdd();
-  document.getElementById('taskHours').onkeydown = e => e.key === 'Enter' && doAdd();
-
-  const summaryEl = document.getElementById('summaryCard');
-  if (isThursday) {
-    summaryEl.innerHTML = `
-      <div class="summaryCard">
-        <div class="summaryHeader">
-          <div class="cardTitle">Итог за неделю</div>
-          <button class="copyBtn" id="copyBtn">Копировать</button>
-        </div>
-        <pre class="summaryPre">${escapeHtml(buildSummary(dates))}</pre>
-      </div>`;
-    document.getElementById('copyBtn').onclick = async () => {
-      try {
-        await navigator.clipboard.writeText(buildSummary(dates));
-        const btn = document.getElementById('copyBtn');
-        btn.textContent = "Скопировано";
-        setTimeout(() => { btn.textContent = "Копировать"; }, 1800);
-      } catch { showError("Не удалось скопировать"); }
-    };
-  } else {
-    summaryEl.innerHTML = "";
-  }
 }
 
-document.getElementById('prevWeek').onclick = () => { periodStart = addDays(periodStart, -7); loadPeriod(periodStart); };
-document.getElementById('nextWeek').onclick = () => { periodStart = addDays(periodStart, 7); loadPeriod(periodStart); };
-
-if (!STORAGE_OK) {
-  showError("Хранилище браузера недоступно (возможно, включён приватный режим). Записи сохранятся только до закрытия вкладки.");
+function fallbackCopy(text){
+  var ta=document.createElement("textarea");
+  ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); } catch(e){}
+  document.body.removeChild(ta);
 }
-loadPeriod(periodStart);
+
+function renderAll(){ renderDays(); renderHeader(); renderTasks(); renderSummary(); }
+
+// --- add handler: only touches task list, never rebuilds the input elements ---
+function doAdd(){
+  var tEl=document.getElementById("inText");
+  var hEl=document.getElementById("inHrs");
+  var text=tEl.value.trim();
+  var hours=parseFloat(hEl.value.replace(",","."));
+  if(!text || !hours || hours<=0) return;
+  var a=activeDate();
+  var k=iso(a.date);
+  var list=loadDay(k);
+  list.push({ id:uid(), text:text, hours:hours });
+  saveDayStore(k,list);
+  tEl.value=""; hEl.value="";
+  renderDays(); renderHeader(); renderTasks(); renderSummary();
+  tEl.focus();
+}
+
+document.getElementById("addBtn").onclick=doAdd;
+document.getElementById("inText").addEventListener("keydown", function(e){ if(e.key==="Enter") doAdd(); });
+document.getElementById("inHrs").addEventListener("keydown", function(e){ if(e.key==="Enter") doAdd(); });
+document.getElementById("prev").onclick=function(){ start=addDays(start,-7); renderAll(); };
+document.getElementById("next").onclick=function(){ start=addDays(start,7); renderAll(); };
+
+if(!storageOk) warn("Хранилище недоступно (приватный режим?). Данные сохранятся только до закрытия вкладки.");
+renderAll();
 </script>
 </body>
 </html>
