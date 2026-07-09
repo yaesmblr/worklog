@@ -29,6 +29,7 @@
   .dayPillDate { font-size: 12px; color: #8A93A6; margin-top: 2px; }
   .dayPillTot { font-size: 11px; color: #E8A33D; margin-top: 4px; font-weight: 700; }
   .dayPill.over .dayPillTot { color: #E8604C; }
+  .dayPill.active.over .dayPillTot { color: #FBEAEA; }
   .card { background: #1B2029; border: 1px solid #2A3140; border-radius: 16px; padding: 16px; margin-bottom: 14px; }
   .cardHead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
   .cardTitle { font-size: 17px; font-weight: 700; }
@@ -37,22 +38,47 @@
   .badge.done { color: #7FA68C; background: rgba(127,166,140,0.12); border-color: rgba(127,166,140,0.35); }
   .badge.over { color: #E8604C; background: rgba(232,96,76,0.12); border-color: rgba(232,96,76,0.35); }
   .empty { color: #6B7488; font-size: 14px; padding: 12px 0; }
-  .task { display: flex; align-items: center; gap: 10px; background: #12151C; border: 1px solid #232938; border-radius: 10px; padding: 11px 12px; margin-bottom: 8px; }
-  .taskText { flex: 1; font-size: 14px; }
-  .taskHrs { font-size: 13px; color: #E8A33D; font-weight: 700; }
-  .del { background: none; border: none; color: #6B7488; font-size: 18px; cursor: pointer; padding: 0 2px; }
-  .addRow { display: flex; gap: 6px; margin-top: 12px; }
+
+  .tplHead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .tplLabel { font-size: 11px; color: #8A93A6; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .tplManage { font-size: 12px; color: #E8A33D; font-weight: 700; cursor: pointer; background: none; border: none; padding: 2px; }
+  .chipRow { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; margin-bottom: 14px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .chipRow::-webkit-scrollbar { display: none; }
+  .chip { position: relative; display: inline-flex; align-items: center; gap: 6px; background: #12151C; border: 1px solid #2A3140; border-radius: 20px; padding: 8px 14px; font-size: 13px; white-space: nowrap; cursor: pointer; color: #F1EDE3; flex-shrink: 0; }
+  .chip.addTpl { border-style: dashed; color: #8A93A6; }
+  .chipDel { background: #E8604C; color: #12151C; border-radius: 50%; width: 16px; height: 16px; font-size: 11px; display: flex; align-items: center; justify-content: center; line-height: 1; border: none; padding: 0; margin-left: 2px; }
+  .chipInput { border: 1px solid #E8A33D; background: #12151C; color: #F1EDE3; border-radius: 20px; padding: 8px 14px; font-size: 13px; width: 130px; }
+  .chipInput:focus { outline: none; }
+  .chipConfirm, .chipCancel { border-radius: 50%; width: 30px; height: 30px; font-size: 13px; border: none; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
+  .chipConfirm { background: #7FA68C; color: #12151C; }
+  .chipCancel { background: #2A3140; color: #F1EDE3; }
+  #chipRowAction .chip.selected { border-color: #E8A33D; background: rgba(232,163,61,0.16); color: #E8A33D; font-weight: 700; }
+  #chipRowClient .chip.selected { border-color: #7FA68C; background: rgba(127,166,140,0.16); color: #7FA68C; font-weight: 700; }
+
+  .task { display: flex; align-items: center; gap: 8px; background: #12151C; border: 1px solid #232938; border-radius: 10px; padding: 11px 12px; margin-bottom: 8px; }
+  .task.editing { border-color: #7FA68C; background: rgba(127,166,140,0.07); }
+  .taskText { flex: 1; font-size: 14px; min-width: 0; overflow-wrap: break-word; }
+  .taskHrs { font-size: 13px; color: #E8A33D; font-weight: 700; white-space: nowrap; }
+  .iconBtn { background: none; border: none; color: #6B7488; font-size: 16px; cursor: pointer; padding: 2px 4px; }
+  .iconBtn.editIcon { color: #7FA68C; font-size: 14px; }
+
+  .editBar { display: none; justify-content: space-between; align-items: center; background: rgba(127,166,140,0.1); border: 1px solid rgba(127,166,140,0.3); border-radius: 10px; padding: 8px 12px; margin-bottom: 10px; font-size: 12.5px; color: #7FA68C; }
+  .editBar.show { display: flex; }
+  .editBar button { background: none; border: none; color: #7FA68C; font-weight: 700; font-size: 12.5px; cursor: pointer; text-decoration: underline; padding: 0; }
+
+  .addRow { display: flex; gap: 6px; }
   .inText, .inHrs { font-size: 16px; padding: 12px; border-radius: 10px; border: 1px solid #2A3140; background: #12151C; color: #F1EDE3; }
   .inText { flex: 1; min-width: 0; }
   .inHrs { width: 60px; text-align: center; }
   .inText:focus, .inHrs:focus { outline: none; border-color: #E8A33D; }
   .addBtn { width: 46px; font-size: 24px; font-weight: 700; border: none; border-radius: 10px; background: #E8A33D; color: #12151C; cursor: pointer; }
+  .addBtn.editing { background: #7FA68C; font-size: 20px; }
+
   .sumCard { background: #1B2029; border: 1px solid #E8A33D; border-radius: 16px; padding: 16px; }
   .sumHead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
   .copyBtn { font-size: 13px; font-weight: 700; color: #E8A33D; background: rgba(232,163,61,0.14); border: 1px solid rgba(232,163,61,0.4); border-radius: 20px; padding: 8px 14px; cursor: pointer; }
   .sumPre { white-space: pre-wrap; font-size: 13px; line-height: 1.6; color: #C9CDD8; margin: 0; font-family: inherit; }
   .warn { margin-top: 12px; background: rgba(232,96,76,0.12); border: 1px solid rgba(232,96,76,0.35); color: #E8604C; border-radius: 10px; padding: 10px 12px; font-size: 13px; }
-  .hidden { display: none; }
 </style>
 </head>
 <body>
@@ -75,7 +101,25 @@
       </div>
       <div class="badge" id="badge"></div>
     </div>
+
     <div id="taskList"></div>
+
+    <div class="tplHead">
+      <div class="tplLabel">Действие</div>
+      <button class="tplManage" id="tplManageActionBtn">Изменить</button>
+    </div>
+    <div class="chipRow" id="chipRowAction"></div>
+
+    <div class="tplHead">
+      <div class="tplLabel">Заказчик</div>
+      <button class="tplManage" id="tplManageClientBtn">Изменить</button>
+    </div>
+    <div class="chipRow" id="chipRowClient"></div>
+
+    <div class="editBar" id="editBar">
+      <span>Правишь запись</span>
+      <button id="cancelEditBtn">Отмена</button>
+    </div>
     <div class="addRow">
       <input class="inText" id="inText" placeholder="Чем занимался?" autocomplete="off" autocorrect="off">
       <input class="inHrs" id="inHrs" placeholder="ч" inputmode="decimal" autocomplete="off">
@@ -99,6 +143,10 @@ var DAYS = [
 ];
 var MONTHS = ["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"];
 var PREFIX = "worklog:";
+var TPL_ACTION_KEY = "worklog:templates";
+var TPL_CLIENT_KEY = "worklog:templatesClient";
+var DEFAULT_ACTION_TEMPLATES = ["УБИ — анализ угроз","Аудит документации","Дайджест ИБ-новостей","Разработка ТЗ/ТП","Совещание","Почта/переписка"];
+var DEFAULT_CLIENT_TEMPLATES = [];
 
 function iso(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
 function addDays(d,n){ var x=new Date(d); x.setDate(x.getDate()+n); return x; }
@@ -107,13 +155,34 @@ function fmt(d){ return d.getDate()+" "+MONTHS[d.getMonth()]; }
 function uid(){ return Math.random().toString(36).slice(2,9); }
 
 var storageOk = (function(){ try { localStorage.setItem("__t","1"); localStorage.removeItem("__t"); return true; } catch(e){ return false; } })();
+var mem = {};
+var memTpl = {};
 
 function loadDay(k){ if(!storageOk) return (mem[k]||[]); try { var r=localStorage.getItem(PREFIX+k); return r?JSON.parse(r):[]; } catch(e){ return []; } }
 function saveDayStore(k,list){ if(!storageOk){ mem[k]=list; warn("Хранилище недоступно (приватный режим?). Данные сохранятся только до закрытия вкладки."); return; } try { localStorage.setItem(PREFIX+k, JSON.stringify(list)); } catch(e){ warn("Не удалось сохранить: "+e.message); } }
-var mem = {};
+
+function loadTplList(key, defaults){
+  if(!storageOk) return (memTpl[key] || defaults.slice());
+  try {
+    var r = localStorage.getItem(key);
+    if(r===null){ localStorage.setItem(key, JSON.stringify(defaults)); return defaults.slice(); }
+    return JSON.parse(r);
+  } catch(e){ return defaults.slice(); }
+}
+function saveTplList(key, arr){
+  if(!storageOk){ memTpl[key]=arr; return; }
+  try { localStorage.setItem(key, JSON.stringify(arr)); } catch(e){ warn("Не удалось сохранить шаблоны: "+e.message); }
+}
 
 var start = periodStart();
 var active = (function(){ var o=(new Date().getDay()+2)%7; for(var i=0;i<DAYS.length;i++){ if(DAYS[i].off===o) return o; } return 0; })();
+var editingId = null;
+var manageAction = false;
+var manageClient = false;
+var selectedAction = null;
+var selectedClient = null;
+var addingAction = false;
+var addingClient = false;
 
 function total(k){ var l=loadDay(k), s=0; for(var i=0;i<l.length;i++) s+=l[i].hours; return s; }
 
@@ -124,9 +193,7 @@ function warn(msg){
   setTimeout(function(){ w.innerHTML=""; }, 5000);
 }
 
-function esc(s){ var d=document.createElement("div"); d.textContent=s; return d.innerHTML; }
-
-// --- rendering split so the input row is NEVER rebuilt while typing ---
+function activeDate(){ for(var i=0;i<DAYS.length;i++){ if(DAYS[i].off===active) return { d: DAYS[i], date: addDays(start,DAYS[i].off) }; } }
 
 function renderDays(){
   var strip=document.getElementById("dayStrip");
@@ -138,13 +205,11 @@ function renderDays(){
       var el=document.createElement("button");
       el.className="dayPill"+(d.off===active?" active":"")+(t>8?" over":"");
       el.innerHTML='<div class="dayPillLabel">'+d.lbl+'</div><div class="dayPillDate">'+addDays(start,d.off).getDate()+'</div><div class="dayPillTot">'+t+' ч</div>';
-      el.onclick=function(){ active=d.off; renderAll(); };
+      el.onclick=function(){ if(active!==d.off){ active=d.off; cancelEdit(); renderAll(); } };
       strip.appendChild(el);
     })(DAYS[i]);
   }
 }
-
-function activeDate(){ for(var i=0;i<DAYS.length;i++){ if(DAYS[i].off===active) return { d: DAYS[i], date: addDays(start,DAYS[i].off) }; } }
 
 function renderHeader(){
   var d0=addDays(start,0), d4=addDays(start,6);
@@ -175,19 +240,173 @@ function renderTasks(){
   for(var i=0;i<list.length;i++){
     (function(item){
       var row=document.createElement("div");
-      row.className="task";
+      row.className="task"+(editingId===item.id?" editing":"");
       var tx=document.createElement("span"); tx.className="taskText"; tx.textContent=item.text;
       var hr=document.createElement("span"); hr.className="taskHrs"; hr.textContent=item.hours+" ч";
-      var del=document.createElement("button"); del.className="del"; del.textContent="✕";
+      var editBtn=document.createElement("button"); editBtn.className="iconBtn editIcon"; editBtn.textContent="✎";
+      editBtn.onclick=function(){ startEdit(item); };
+      var del=document.createElement("button"); del.className="iconBtn"; del.textContent="✕";
       del.onclick=function(){
         var cur=loadDay(k).filter(function(x){ return x.id!==item.id; });
         saveDayStore(k,cur);
+        if(editingId===item.id) cancelEdit();
         renderDays(); renderHeader(); renderTasks(); renderSummary();
       };
-      row.appendChild(tx); row.appendChild(hr); row.appendChild(del);
+      row.appendChild(tx); row.appendChild(hr); row.appendChild(editBtn); row.appendChild(del);
       box.appendChild(row);
     })(list[i]);
   }
+}
+
+function updateComposedText(){
+  var parts=[];
+  if(selectedAction) parts.push(selectedAction);
+  if(selectedClient) parts.push(selectedClient);
+  if(parts.length>0){
+    document.getElementById("inText").value = parts.join(" — ");
+  }
+}
+
+function renderActionTemplates(){
+  var row=document.getElementById("chipRowAction");
+  row.innerHTML="";
+  var tpls=loadTplList(TPL_ACTION_KEY, DEFAULT_ACTION_TEMPLATES);
+  for(var i=0;i<tpls.length;i++){
+    (function(name){
+      var chip=document.createElement("button");
+      var isSel = !manageAction && name===selectedAction;
+      chip.className="chip"+(isSel?" selected":"");
+      chip.textContent=(isSel?"✓ ":"")+name;
+      if(manageAction){
+        var delBtn=document.createElement("span");
+        delBtn.className="chipDel"; delBtn.textContent="✕";
+        delBtn.onclick=function(ev){
+          ev.stopPropagation();
+          var cur=loadTplList(TPL_ACTION_KEY,DEFAULT_ACTION_TEMPLATES).filter(function(t){ return t!==name; });
+          saveTplList(TPL_ACTION_KEY,cur);
+          if(selectedAction===name) selectedAction=null;
+          renderActionTemplates();
+        };
+        chip.appendChild(delBtn);
+      } else {
+        chip.onclick=function(){
+          selectedAction = (selectedAction===name) ? null : name;
+          renderActionTemplates();
+          updateComposedText();
+        };
+      }
+      row.appendChild(chip);
+    })(tpls[i]);
+  }
+  if(addingAction){
+    var wrap=document.createElement("span");
+    wrap.style.display="inline-flex"; wrap.style.alignItems="center"; wrap.style.gap="4px"; wrap.style.flexShrink="0";
+    var input=document.createElement("input");
+    input.className="chipInput";
+    input.placeholder="Текст действия";
+    input.autocomplete="off"; input.autocorrect="off";
+    input.addEventListener("keydown", function(e){
+      if(e.key==="Enter") confirmAddAction(input.value);
+      if(e.key==="Escape"){ addingAction=false; renderActionTemplates(); }
+    });
+    var okBtn=document.createElement("button");
+    okBtn.className="chipConfirm"; okBtn.textContent="✓";
+    okBtn.onclick=function(){ confirmAddAction(input.value); };
+    var cancelBtn=document.createElement("button");
+    cancelBtn.className="chipCancel"; cancelBtn.textContent="✕";
+    cancelBtn.onclick=function(){ addingAction=false; renderActionTemplates(); };
+    wrap.appendChild(input); wrap.appendChild(okBtn); wrap.appendChild(cancelBtn);
+    row.appendChild(wrap);
+    setTimeout(function(){ input.focus(); }, 0);
+  } else {
+    var addChip=document.createElement("button");
+    addChip.className="chip addTpl";
+    addChip.textContent="＋ Свой";
+    addChip.onclick=function(){ addingAction=true; renderActionTemplates(); };
+    row.appendChild(addChip);
+  }
+  document.getElementById("tplManageActionBtn").textContent = manageAction ? "Готово" : "Изменить";
+}
+
+function confirmAddAction(name){
+  if(name && name.trim()){
+    var cur=loadTplList(TPL_ACTION_KEY,DEFAULT_ACTION_TEMPLATES);
+    cur.push(name.trim());
+    saveTplList(TPL_ACTION_KEY,cur);
+  }
+  addingAction=false;
+  renderActionTemplates();
+}
+
+function renderClientTemplates(){
+  var row=document.getElementById("chipRowClient");
+  row.innerHTML="";
+  var tpls=loadTplList(TPL_CLIENT_KEY, DEFAULT_CLIENT_TEMPLATES);
+  for(var i=0;i<tpls.length;i++){
+    (function(name){
+      var chip=document.createElement("button");
+      var isSel = !manageClient && name===selectedClient;
+      chip.className="chip"+(isSel?" selected":"");
+      chip.textContent=(isSel?"✓ ":"")+name;
+      if(manageClient){
+        var delBtn=document.createElement("span");
+        delBtn.className="chipDel"; delBtn.textContent="✕";
+        delBtn.onclick=function(ev){
+          ev.stopPropagation();
+          var cur=loadTplList(TPL_CLIENT_KEY,DEFAULT_CLIENT_TEMPLATES).filter(function(t){ return t!==name; });
+          saveTplList(TPL_CLIENT_KEY,cur);
+          if(selectedClient===name) selectedClient=null;
+          renderClientTemplates();
+        };
+        chip.appendChild(delBtn);
+      } else {
+        chip.onclick=function(){
+          selectedClient = (selectedClient===name) ? null : name;
+          renderClientTemplates();
+          updateComposedText();
+        };
+      }
+      row.appendChild(chip);
+    })(tpls[i]);
+  }
+  if(addingClient){
+    var wrapC=document.createElement("span");
+    wrapC.style.display="inline-flex"; wrapC.style.alignItems="center"; wrapC.style.gap="4px"; wrapC.style.flexShrink="0";
+    var inputC=document.createElement("input");
+    inputC.className="chipInput";
+    inputC.placeholder="Имя заказчика";
+    inputC.autocomplete="off"; inputC.autocorrect="off";
+    inputC.addEventListener("keydown", function(e){
+      if(e.key==="Enter") confirmAddClient(inputC.value);
+      if(e.key==="Escape"){ addingClient=false; renderClientTemplates(); }
+    });
+    var okBtnC=document.createElement("button");
+    okBtnC.className="chipConfirm"; okBtnC.textContent="✓";
+    okBtnC.onclick=function(){ confirmAddClient(inputC.value); };
+    var cancelBtnC=document.createElement("button");
+    cancelBtnC.className="chipCancel"; cancelBtnC.textContent="✕";
+    cancelBtnC.onclick=function(){ addingClient=false; renderClientTemplates(); };
+    wrapC.appendChild(inputC); wrapC.appendChild(okBtnC); wrapC.appendChild(cancelBtnC);
+    row.appendChild(wrapC);
+    setTimeout(function(){ inputC.focus(); }, 0);
+  } else {
+    var addChipC=document.createElement("button");
+    addChipC.className="chip addTpl";
+    addChipC.textContent="＋ Свой";
+    addChipC.onclick=function(){ addingClient=true; renderClientTemplates(); };
+    row.appendChild(addChipC);
+  }
+  document.getElementById("tplManageClientBtn").textContent = manageClient ? "Готово" : "Изменить";
+}
+
+function confirmAddClient(name){
+  if(name && name.trim()){
+    var cur=loadTplList(TPL_CLIENT_KEY,DEFAULT_CLIENT_TEMPLATES);
+    cur.push(name.trim());
+    saveTplList(TPL_CLIENT_KEY,cur);
+  }
+  addingClient=false;
+  renderClientTemplates();
 }
 
 function buildSummary(){
@@ -227,9 +446,31 @@ function fallbackCopy(text){
   document.body.removeChild(ta);
 }
 
-function renderAll(){ renderDays(); renderHeader(); renderTasks(); renderSummary(); }
+function renderAll(){ renderDays(); renderHeader(); renderTasks(); renderActionTemplates(); renderClientTemplates(); renderSummary(); }
 
-// --- add handler: only touches task list, never rebuilds the input elements ---
+function startEdit(item){
+  editingId = item.id;
+  selectedAction = null; selectedClient = null;
+  document.getElementById("inText").value = item.text;
+  document.getElementById("inHrs").value = String(item.hours);
+  document.getElementById("addBtn").textContent = "✓";
+  document.getElementById("addBtn").classList.add("editing");
+  document.getElementById("editBar").classList.add("show");
+  renderTasks(); renderActionTemplates(); renderClientTemplates();
+  document.getElementById("inText").focus();
+}
+
+function cancelEdit(){
+  editingId = null;
+  selectedAction = null; selectedClient = null;
+  document.getElementById("inText").value = "";
+  document.getElementById("inHrs").value = "";
+  document.getElementById("addBtn").textContent = "+";
+  document.getElementById("addBtn").classList.remove("editing");
+  document.getElementById("editBar").classList.remove("show");
+  renderTasks(); renderActionTemplates(); renderClientTemplates();
+}
+
 function doAdd(){
   var tEl=document.getElementById("inText");
   var hEl=document.getElementById("inHrs");
@@ -239,9 +480,17 @@ function doAdd(){
   var a=activeDate();
   var k=iso(a.date);
   var list=loadDay(k);
-  list.push({ id:uid(), text:text, hours:hours });
-  saveDayStore(k,list);
-  tEl.value=""; hEl.value="";
+
+  if(editingId!==null){
+    var idx=-1;
+    for(var i=0;i<list.length;i++){ if(list[i].id===editingId){ idx=i; break; } }
+    if(idx!==-1){ list[idx].text=text; list[idx].hours=hours; }
+    saveDayStore(k,list);
+  } else {
+    list.push({ id:uid(), text:text, hours:hours });
+    saveDayStore(k,list);
+  }
+  cancelEdit();
   renderDays(); renderHeader(); renderTasks(); renderSummary();
   tEl.focus();
 }
@@ -249,8 +498,24 @@ function doAdd(){
 document.getElementById("addBtn").onclick=doAdd;
 document.getElementById("inText").addEventListener("keydown", function(e){ if(e.key==="Enter") doAdd(); });
 document.getElementById("inHrs").addEventListener("keydown", function(e){ if(e.key==="Enter") doAdd(); });
-document.getElementById("prev").onclick=function(){ start=addDays(start,-7); renderAll(); };
-document.getElementById("next").onclick=function(){ start=addDays(start,7); renderAll(); };
+document.getElementById("cancelEditBtn").onclick=cancelEdit;
+document.getElementById("tplManageActionBtn").onclick=function(){ manageAction=!manageAction; renderActionTemplates(); };
+document.getElementById("tplManageClientBtn").onclick=function(){ manageClient=!manageClient; renderClientTemplates(); };
+document.getElementById("prev").onclick=function(){ start=addDays(start,-7); cancelEdit(); renderAll(); };
+document.getElementById("next").onclick=function(){ start=addDays(start,7); cancelEdit(); renderAll(); };
+
+document.addEventListener("visibilitychange", function(){
+  if(document.visibilityState==="visible"){
+    var freshStart = periodStart();
+    if(iso(freshStart) !== iso(start)){
+      start = freshStart;
+      var o=(new Date().getDay()+2)%7;
+      for(var i=0;i<DAYS.length;i++){ if(DAYS[i].off===o){ active=o; break; } }
+      cancelEdit();
+      renderAll();
+    }
+  }
+});
 
 if(!storageOk) warn("Хранилище недоступно (приватный режим?). Данные сохранятся только до закрытия вкладки.");
 renderAll();
